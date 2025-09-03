@@ -1,0 +1,149 @@
+# CRM Systems HTML Website Configuration
+# Optimized for static HTML site
+
+# Security Settings
+# Disable directory browsing
+Options -Indexes
+
+# Security headers for better protection
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Custom 404 Error Page
+ErrorDocument 404 /404.html
+
+# Performance Optimization
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Browser caching for better performance
+<IfModule mod_expires.c>
+    ExpiresActive on
+    # Cache HTML files for 1 hour
+    ExpiresByType text/html "access plus 1 hour"
+    # Cache CSS and JS for 1 year
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    # Cache images for 1 year
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    # Cache fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+# Force HTTPS redirect (uncomment if you have SSL certificate)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# URL Redirects and Rewrites
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Redirect www to non-www (or vice versa - choose one)
+# Remove www version:
+RewriteCond %{HTTP_HOST} ^www\.crmsusteemid\.ee [NC]
+RewriteRule ^(.*)$ https://crmsusteemid.ee/$1 [R=301,L]
+
+# OR force www version (uncomment if you prefer www):
+# RewriteCond %{HTTP_HOST} ^crmsusteemid\.ee [NC]
+# RewriteRule ^(.*)$ https://www.crmsusteemid.ee/$1 [R=301,L]
+
+# Clean URLs - remove .html extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirect .html URLs to clean URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Redirect old/common URLs to appropriate sections
+# Add your specific old URLs here:
+
+# Common old page redirects
+Redirect 301 /teenused https://crmsusteemid.ee#crm-services
+Redirect 301 /teenused.html https://crmsusteemid.ee#crm-services
+Redirect 301 /services https://crmsusteemid.ee#crm-services
+Redirect 301 /services.html https://crmsusteemid.ee#crm-services
+
+Redirect 301 /meist https://crmsusteemid.ee#about
+Redirect 301 /meist.html https://crmsusteemid.ee#about
+Redirect 301 /about https://crmsusteemid.ee#about
+Redirect 301 /about.html https://crmsusteemid.ee#about
+
+Redirect 301 /kontakt https://crmsusteemid.ee#contact
+Redirect 301 /kontakt.html https://crmsusteemid.ee#contact
+Redirect 301 /contact https://crmsusteemid.ee#contact
+Redirect 301 /contact.html https://crmsusteemid.ee#contact
+
+Redirect 301 /ai https://crmsusteemid.ee#ai-services
+Redirect 301 /ai.html https://crmsusteemid.ee#ai-services
+Redirect 301 /ai-teenused https://crmsusteemid.ee#ai-services
+Redirect 301 /ai-teenused.html https://crmsusteemid.ee#ai-services
+
+# Legacy WordPress URLs (if migrating from WordPress)
+Redirect 301 /wp-admin https://crmsusteemid.ee
+Redirect 301 /wp-login.php https://crmsusteemid.ee
+Redirect 301 /feed https://crmsusteemid.ee
+Redirect 301 /category/ai https://crmsusteemid.ee#ai-services
+Redirect 301 /category/crm https://crmsusteemid.ee#crm-services
+
+# Block access to sensitive files
+RewriteRule ^\.htaccess$ - [F,L]
+RewriteRule ^\.htpasswd$ - [F,L]
+
+</IfModule>
+
+# Block access to sensitive file types
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql|conf)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to backup files
+<FilesMatch "\.(bak|backup|old|orig|original|tmp)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# MIME types for better compatibility
+<IfModule mod_mime.c>
+    # Web fonts
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    
+    # JavaScript
+    AddType application/javascript .js
+    
+    # Web App Manifest
+    AddType application/manifest+json .webmanifest
+    
+    # SVG
+    AddType image/svg+xml .svg
+</IfModule>

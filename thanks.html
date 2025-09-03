@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Täname pöördumise eest | CRM Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Animated background pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50%, -50%); }
+        }
+
+        /* Main container */
+        .thank-you-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 600px;
+            width: 90%;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Success icon */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            animation: bounce 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Typography */
+        .main-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Info box */
+        .contact-confirmation {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.9s both;
+        }
+
+        .contact-confirmation h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-confirmation p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-confirmation .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            animation: fadeInUp 0.8s ease-out 1.1s both;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Company info */
+        .company-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(30, 58, 138, 0.05);
+            border-radius: 15px;
+            animation: fadeInUp 0.8s ease-out 1.3s both;
+        }
+
+        .company-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .company-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .success-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 8px;
+            height: 8px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 12px;
+            height: 12px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            width: 6px;
+            height: 6px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <div class="thank-you-container">
+        <div class="success-icon">
+            ✓
+        </div>
+        
+        <h1 class="main-title">Täname pöördumise eest!</h1>
+        
+        <p class="subtitle">
+            Teie päring on edukalt saadetud.
+        </p>
+
+        <div class="contact-confirmation">
+            <h3>Mis saab edasi?</h3>
+            <p>📧 Võtame teiega ühendust</p>
+            <p>📞 Lepime kokku konsultatsiooni aja, et arutada koos Teile sobivaimaid lahendusi</p>
+        </div>
+
+        <div class="action-buttons">
+            <a href="https://www.crmsusteemid.ee" class="btn-primary">Tagasi avalehele</a>
+            <a href="https://www.crmsusteemid.ee#ai-services" class="btn-secondary">AI Teenused</a>
+        </div>
+
+        <div class="company-info">
+            <h4>Kontaktandmed</h4>
+            <p class="company-name">CRM Systems OÜ</p>
+            <p>📍 Akadeemia tee 21/6, 12618 Tallinn</p>
+            <p>🌐 www.crmsusteemid.ee</p>
+            <p style="margin-top: 1rem; font-style: italic;">
+                "CRM traditsioonist AI tulevikku"
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth entrance animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some interactive sparkle effect
+            document.querySelector('.thank-you-container').addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                this.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 100%)`;
+            });
+
+            // Reset background on mouse leave
+            document.querySelector('.thank-you-container').addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.95)';
+            });
+        });
+
+        // Auto-redirect after 10 seconds (optional)
+        setTimeout(function() {
+            const container = document.querySelector('.thank-you-container');
+            const countdownEl = document.createElement('p');
+            countdownEl.style.cssText = 'margin-top: 2rem; color: #64748b; font-size: 0.9rem;';
+            countdownEl.textContent = 'Suuname teid 5 sekundi pärast avalehele...';
+            container.appendChild(countdownEl);
+            
+            let countdown = 5;
+            const interval = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = `Suuname teid ${countdown} sekundi pärast avalehele...`;
+                
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    window.location.href = 'https://www.crmsusteemid.ee';
+                }
+            }, 1000);
+        }, 10000);
+    </script>
+</body>
+</html>
