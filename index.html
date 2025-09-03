@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & CRM Lahendused | CRM Systems</title>
+    
+    <!-- SEO meta-tagid -->
+    <meta name="description" content="CRM Systems - AI ja CRM lahendused Eesti ettevõtetele. 17+ aastat kogemust, 500+ projekti. Tehisintellekt ja kliendihaldussüsteemid.">
+    <meta name="keywords" content="CRM lahendused, AI teenused, tehisintellekt, kliendihaldus, CRM Systems, Eesti, konsultatsioon, arendus">
+    <meta name="author" content="CRM Systems OÜ">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.crmsusteemid.ee/">
+    
+    <!-- Open Graph sotsiaalmeedia jaoks -->
+    <meta property="og:title" content="CRM Systems - AI ja CRM Lahendused">
+    <meta property="og:description" content="17+ aastat kogemust CRM-lahendustega. Nüüd ka AI teenused. CRM traditsioonist AI tulevikku.">
+    <meta property="og:url" content="https://www.crmsusteemid.ee/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="et_EE">
+    <meta property="og:site_name" content="CRM Systems">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CRM Systems - AI ja CRM Lahendused">
+    <meta name="twitter:description" content="17+ aastat kogemust CRM-lahendustega. Nüüd ka AI teenused.">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CRM Systems OÜ",
+        "url": "https://www.crmsusteemid.ee",
+        "logo": "https://www.crmsusteemid.ee/logo.png",
+        "foundingDate": "2007",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Akadeemia tee 21/6",
+            "postalCode": "12618",
+            "addressLocality": "Tallinn",
+            "addressCountry": "EE"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "info@crmsusteemid.ee"
+        },
+        "sameAs": [],
+        "description": "CRM Systems on 2007. aastal asutatud ettevõte, mis pakub AI ja CRM lahendusi Eesti ettevõtetele. Üle 17 aasta kogemust ja 500+ projekti."
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Page display control */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50%, -50%); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .service-features {
+            margin-top: 1.5rem;
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* AI Services */
+        .ai-services {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .ai-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            transition: all 0.3s;
+        }
+
+        .ai-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .ai-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            position: relative;
+            color: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-description strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        .experience-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .badge-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about .section-title {
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            background: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+            grid-column: 1 / -1;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Privacy Policy Page Styles */
+        .privacy-header {
+            margin-top: 80px;
+            padding: 3rem 2rem;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .privacy-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .privacy-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .privacy-section h3 {
+            color: var(--dark);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .privacy-section p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .back-to-home:hover {
+            color: var(--primary-light);
+        }
+
+        .back-to-home::before {
+            content: '← ';
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Page -->
+    <div id="main-page" class="page active">
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
+                <div class="logo">CRM Systems</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Avaleht</a></li>
+                    <li><a href="#ai-services">AI Teenused</a></li>
+                    <li><a href="#crm-services">CRM Lahendused</a></li>
+                    <li><a href="#about">Meist</a></li>
+                </ul>
+                <a href="#contact" class="cta-button">Võta ühendust</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>AI ja CRM lahendused</h1>
+                <p>Viime teie ettevõtte digiajastusse tehisintellekti ja nutikate kliendihaldussüsteemidega</p>
+                <div class="hero-buttons">
+                    <a href="#ai-services" class="btn-primary">AI Teenused</a>
+                    <a href="#crm-services" class="btn-secondary">CRM Lahendused</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Services Section -->
+        <section class="ai-services" id="ai-services">
+            <div class="container">
+                <h2 class="section-title">AI Teenused</h2>
+                <p class="section-subtitle">Tehisintellekti lahendused teie äri kasvatamiseks</p>
+                
+                <div class="ai-grid">
+                    <div class="ai-card">
+                        <div class="ai-icon">🤖</div>
+                        <h3>AI Nõustamine</h3>
+                        <p>Strateegiline nõustamine AI võimaluste rakendamiseks teie äris. Analüüsime teie protsesse ja leiame parimad AI lahendused.</p>
+                    </div>
+                    
+                    <div class="ai-card">
+                        <div class="ai-icon">🗺️</div>
+                        <h3>AI Teekaart</h3>
+                        <p>Loome teile personaalse AI kasutuselevõtu teekaardi, mis arvestab teie ärivajadusi ja tehnilisi võimalusi.</p>
+                    </div>
+                    
+                    <div class="ai-card">
+                        <div class="ai-icon">🚀</div>
+                        <h3>AI Kasutuselevõtt</h3>
+                        <p>AI lahenduste juurutamine algusest lõpuni - integratsioon, testimine ja optimeerimine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CRM Services Section -->
+        <section class="services" id="crm-services">
+            <div class="container">
+                <h2 class="section-title">CRM Lahendused</h2>
+                <p class="section-subtitle">Täisteenuslik kliendihaldussüsteemide portfell</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💡</div>
+                        <h3>Konsultatsioon</h3>
+                        <p>Analüüsime teie äriprotsesse ja soovitame sobivaimaid CRM lahendusi.</p>
+                        <ul class="service-features">
+                            <li>Vajaduste kaardistamine</li>
+                            <li>Lahenduste võrdlus</li>
+                            <li>ROI analüüs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Projektijuhtimine</h3>
+                        <p>Professionaalne projektijuhtimine CRM süsteemide juurutamisel.</p>
+                        <ul class="service-features">
+                            <li>Ajakava planeerimine</li>
+                            <li>Ressursside haldus</li>
+                            <li>Riskide juhtimine</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Arendus</h3>
+                        <p>Kohandatud CRM lahenduste arendamine vastavalt teie vajadustele.</p>
+                        <ul class="service-features">
+                            <li>Kohandatud funktsioonid</li>
+                            <li>Integratsioonid</li>
+                            <li>API arendus</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>Juurutus</h3>
+                        <p>CRM süsteemide sujuv ja tõrgeteta kasutuselevõtt.</p>
+                        <ul class="service-features">
+                            <li>Andmete migratsioon</li>
+                            <li>Süsteemi seadistamine</li>
+                            <li>Kasutajakoolitus</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Tugi</h3>
+                        <p>Pidev tehniline tugi ja süsteemi hooldus.</p>
+                        <ul class="service-features">
+                            <li>24/7 kasutajatugi</li>
+                            <li>Regulaarsed uuendused</li>
+                            <li>Jõudluse optimeerimine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">CRM traditsioonist AI tulevikku</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            CRM Systems on loodud 2007. aastal ning oleme juba <strong>üle 17 aasta</strong> aidanud Eesti ettevõtetel 
+                            rakendada tõhusaid kliendihaldussüsteeme. Meie pikaajaline kogemus CRM-lahendustega annab meile sügava 
+                            arusaama kliendihalduse väljakutsetest ja võimalustest.
+                        </p>
+                        <p class="about-description">
+                            Täna oleme laiendanud oma teenuste portfelli ka tehisintellekti lahendustega, 
+                            kombineerides aastakümnetepikkuse CRM-ekspertiisi uusimate AI-tehnoloogiatega. 
+                            See unikaalne kombinatsioon võimaldab meil pakkuda teile terviklikke lahendusi, 
+                            mis viivad teie kliendihalduse täiesti uuele tasemele.
+                        </p>
+                        <div class="experience-badges">
+                            <div class="badge">
+                                <span class="badge-number">2007</span>
+                                <span class="badge-text">Asutatud</span>
+                            </div>
+                            <div class="badge">
+                                <span class="badge-number">17+</span>
+                                <span class="badge-text">Aastat kogemust</span>
+                            </div>
+                            <div class="badge">
+                                <span class="badge-number">500+</span>
+                                <span class="badge-text">CRM projekti</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-content">
+                <h2 class="section-title">Alustame koostööd</h2>
+                <p class="section-subtitle">Kirjutage meile ja leiame teie ettevõttele parima lahenduse.</p>
+                
+                <div class="contact-info">
+                    <h3>Kontaktandmed</h3>
+                    <p class="company-name">CRM Systems OÜ</p>
+                    <p>📍 Akadeemia tee 21/6<br>
+                       12618 Tallinn<br>
+                       Eesti</p>
+                    <p>📧 <span id="email-address"></span></p>
+                </div>
+                
+                <form class="contact-form" action="https://formspree.io/f/xdklgzve" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Teie nimi" required>
+                        <input type="email" name="_replyto" placeholder="E-post" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Telefon">
+                        <select name="service">
+                            <option value="">Valige teenus</option>
+                            <option value="ai-services">Tehisintellekti (AI) teenused</option>
+                            <option value="crm-services">Kliendihalduslahendused (CRM)</option>
+                        </select>
+                    </div>
+                    <!-- Honeypot field - hidden from users -->
+                    <input type="text" name="_gotcha" style="display: none !important; visibility: hidden !important; opacity: 0 !important; position: absolute !important; left: -9999px !important;" tabindex="-1" autocomplete="off">
+                    
+                    <!-- Hidden field for subject -->
+                    <input type="hidden" name="_subject" value="Uus päring CRM Systems veebilehelt">
+                    
+                    <textarea name="message" placeholder="Kirjeldage oma projekti või küsimusi" required></textarea>
+                    <button type="submit" class="submit-btn">Saada päring</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <ul class="footer-links">
+                    <li><a onclick="showPrivacyPolicy()">Privaatsuspoliitika</a></li>
+                    <li><a href="#about">Meist</a></li>
+                </ul>
+                <p>&copy; 2025 CRM Systems. Kõik õigused kaitstud. | Asutatud 2007</p>
+                <p style="opacity: 0.7; margin-top: 1rem;">www.crmsusteemid.ee</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div id="privacy-page" class="page">
+        <nav>
+            <div class="nav-container">
+                <div class="logo">CRM Systems</div>
+                <ul class="nav-links">
+                    <li><a onclick="showMainPage()">Avaleht</a></li>
+                </ul>
+                <a onclick="showMainPage()" class="cta-button">Tagasi</a>
+            </div>
+        </nav>
+
+        <div class="privacy-header">
+            <h1>Privaatsuspoliitika</h1>
+            <p>Kehtiv alates: 1. jaanuar 2025</p>
+        </div>
+
+        <div class="privacy-content">
+            <a onclick="showMainPage()" class="back-to-home">Tagasi avalehele</a>
+
+            <div class="privacy-section">
+                <p>
+                    CRM Systems OÜ austab teie privaatsust ja on pühendunud teie isikuandmete kaitsele. 
+                    Kogume, kasutame, säilitame ja kaitseme teie isikuandmeid vastavalt Euroopa Liidu 
+                    isikuandmete kaitse üldmäärusele (GDPR) ja Eesti andmekaitseseadusele.
+                </p>
+            </div>
+
+            <a onclick="showMainPage()" class="back-to-home">Tagasi avalehele</a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 CRM Systems. Kõik õigused kaitstud. | Asutatud 2007</p>
+                <p style="opacity: 0.7; margin-top: 1rem;">www.crmsusteemid.ee</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Email obfuscation - protect from bots
+        function initEmail() {
+            const user = 'info';
+            const domain = 'crmsusteemid';
+            const ext = 'ee';
+            const email = user + '@' + domain + '.' + ext;
+            const emailElement = document.getElementById('email-address');
+            if (emailElement) {
+                emailElement.innerHTML = '<a href="mailto:' + email + '" style="color: var(--primary); text-decoration: none;">' + email + '</a>';
+            }
+        }
+
+        // Initialize email when page loads
+        document.addEventListener('DOMContentLoaded', initEmail);
+
+        // Page navigation
+        function showPrivacyPolicy() {
+            document.getElementById('main-page').classList.remove('active');
+            document.getElementById('privacy-page').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showMainPage() {
+            document.getElementById('privacy-page').classList.remove('active');
+            document.getElementById('main-page').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission with JavaScript redirect
+        let formStartTime = Date.now();
+        
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop normal form submission
+            
+            // Honeypot spam protection
+            const honeypot = this.querySelector('input[name="_gotcha"]');
+            if (honeypot && honeypot.value !== '') {
+                console.log('Bot detected');
+                return false;
+            }
+            
+            // Time protection (3 seconds minimum)
+            const currentTime = Date.now();
+            if (currentTime - formStartTime < 3000) {
+                alert('Palun oodake hetk enne vormi saatmist.');
+                return false;
+            }
+            
+            // Field validation
+            const name = this.querySelector('input[name="name"]').value;
+            const email = this.querySelector('input[name="_replyto"]').value;
+            const message = this.querySelector('textarea[name="message"]').value;
+            
+            if (!name || !email || !message) {
+                alert('Palun täitke kõik nõutud väljad.');
+                return false;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Palun sisestage kehtiv e-posti aadress.');
+                return false;
+            }
+            
+            // Show loading
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Saadan...';
+            submitBtn.disabled = true;
+            
+            // Send to Formspree
+            const formData = new FormData(this);
+            
+            fetch('https://formspree.io/f/xdklgzve', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // SUCCESS: Redirect to thanks page
+                    window.location.href = 'thanks.html';
+                } else {
+                    throw new Error('Network error');
+                }
+            }).catch(error => {
+                // Error handling
+                alert('Viga vormi saatmisel. Palun proovige uuesti.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+            
+            // Reset timer
+            formStartTime = Date.now();
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards for animations
+        document.querySelectorAll('.service-card, .ai-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
