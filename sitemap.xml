@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Avaleht - kõige tähtsam -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Avaleht index.html-ga -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/index.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- AI teenused sektsioon -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/#ai-services</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- CRM lahendused sektsioon -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/#crm-services</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Meist sektsioon -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/#about</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Kontakt sektsioon -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/#contact</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Tänu leht -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/thanks.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- 404 leht -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/404.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    
+    <!-- Privaatsuspoliitika (kui see saab eraldi URL) -->
+    <url>
+        <loc>https://www.crmsusteemid.ee/#privacy</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+</urlset>
