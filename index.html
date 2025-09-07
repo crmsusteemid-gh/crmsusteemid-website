@@ -371,6 +371,248 @@
             margin-bottom: 1rem;
         }
 
+        /* Articles Section */
+        .articles {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid var(--light-gray);
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .article-card.placeholder {
+            opacity: 0.8;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+        }
+
+        .article-image {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .article-category {
+            background: var(--gradient);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .article-title {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            padding: 0 1.5rem;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .article-read-more {
+            display: inline-block;
+            margin: 0 1.5rem 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .article-read-more:hover {
+            color: var(--primary-light);
+            transform: translateX(5px);
+        }
+
+        .article-read-more::after {
+            content: ' →';
+            transition: transform 0.3s;
+        }
+
+        .article-read-more:hover::after {
+            transform: translateX(5px);
+        }
+
+        .articles-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Article modal/popup styles */
+        .article-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .article-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .article-modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .article-modal-header {
+            position: relative;
+            height: 250px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .article-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .article-modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .article-modal-body {
+            padding: 2rem;
+        }
+
+        .article-modal-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .article-modal-title {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-modal-text {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .article-modal-text h2,
+        .article-modal-text h3 {
+            color: var(--dark);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-modal-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-modal-text ul,
+        .article-modal-text ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .article-modal-text li {
+            margin-bottom: 0.5rem;
+        }
+
         /* About Section */
         .about {
             padding: 5rem 2rem;
@@ -621,6 +863,33 @@
             opacity: 1;
         }
 
+        /* Mobile responsive for articles */
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-modal {
+                padding: 1rem;
+            }
+
+            .article-modal-content {
+                margin: 1rem auto;
+            }
+
+            .article-modal-header {
+                height: 200px;
+            }
+
+            .article-modal-title {
+                font-size: 1.5rem;
+            }
+
+            .article-modal-body {
+                padding: 1.5rem;
+            }
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -659,6 +928,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Avaleht</a></li>
                     <li><a href="#ai-services">AI Teenused</a></li>
+                    <li><a href="#articles">Artiklid</a></li>
                     <li><a href="#crm-services">CRM Lahendused</a></li>
                     <li><a href="#about">Meist</a></li>
                 </ul>
@@ -702,6 +972,37 @@
                         <h3>AI Kasutuselevõtt</h3>
                         <p>AI lahenduste juurutamine algusest lõpuni - integratsioon, testimine ja optimeerimine.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles/Blog Section -->
+        <section class="articles" id="articles">
+            <div class="container">
+                <h2 class="section-title">Artiklid & Blogi</h2>
+                <p class="section-subtitle">Ekspertteadmised AI ja CRM valdkonnast</p>
+                
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Artikli placeholder'id laetakse JavaScriptiga -->
+                    <div class="article-card placeholder">
+                        <div class="article-image">
+                            <div class="placeholder-icon">📰</div>
+                        </div>
+                        <div class="article-meta">
+                            <span class="article-category">AI Uudised</span>
+                            <span class="article-date">Varsti</span>
+                        </div>
+                        <h3 class="article-title">Artiklid ilmuvad peagi</h3>
+                        <p class="article-excerpt">
+                            Jagame varsti ekspertteadmisi AI ja CRM valdkonnast. 
+                            Järgige meie lehte, et olla kursis uusimate trendidega.
+                        </p>
+                        <a href="#contact" class="article-read-more">Telli uudiskiri</a>
+                    </div>
+                </div>
+                
+                <div class="articles-cta">
+                    <a href="#" class="btn-secondary" id="loadMoreArticles" style="display: none;">Vaata rohkem artikleid</a>
                 </div>
             </div>
         </section>
@@ -900,6 +1201,187 @@
     </div>
 
     <script>
+        // Articles functionality
+        let articles = [];
+        let displayedArticlesCount = 0;
+        const articlesPerPage = 6;
+
+        // Function to load articles from markdown files
+        async function loadArticles() {
+            try {
+                // Try to load articles index file
+                const response = await fetch('./articles/index.json');
+                if (response.ok) {
+                    const articlesIndex = await response.json();
+                    articles = articlesIndex;
+                    displayArticles();
+                } else {
+                    // If no articles yet, show placeholder
+                    console.log('Artikleid veel pole saadaval');
+                }
+            } catch (error) {
+                console.log('Artiklite laadimine ebaõnnestus:', error);
+                // Keep placeholder visible
+            }
+        }
+
+        // Function to display articles
+        function displayArticles() {
+            const articlesGrid = document.getElementById('articlesGrid');
+            const loadMoreBtn = document.getElementById('loadMoreArticles');
+            
+            if (articles.length === 0) {
+                return; // Keep placeholder
+            }
+
+            // Clear placeholder
+            articlesGrid.innerHTML = '';
+
+            // Show articles
+            const articlesToShow = articles.slice(0, displayedArticlesCount + articlesPerPage);
+            displayedArticlesCount = articlesToShow.length;
+
+            articlesToShow.forEach(article => {
+                const articleCard = createArticleCard(article);
+                articlesGrid.appendChild(articleCard);
+            });
+
+            // Show/hide load more button
+            if (displayedArticlesCount < articles.length) {
+                loadMoreBtn.style.display = 'inline-block';
+            } else {
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        // Function to create article card HTML
+        function createArticleCard(article) {
+            const card = document.createElement('div');
+            card.className = 'article-card';
+            card.innerHTML = `
+                <div class="article-image">
+                    ${article.image ? 
+                        `<img src="./articles/${article.image}" alt="${article.title}" loading="lazy">` : 
+                        `<div class="placeholder-icon">${article.icon || '📄'}</div>`
+                    }
+                </div>
+                <div class="article-meta">
+                    <span class="article-category">${article.category}</span>
+                    <span class="article-date">${formatDate(article.date)}</span>
+                </div>
+                <h3 class="article-title">${article.title}</h3>
+                <p class="article-excerpt">${article.excerpt}</p>
+                <a href="#" class="article-read-more" onclick="openArticle('${article.slug}')">Loe edasi</a>
+            `;
+            return card;
+        }
+
+        // Function to format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('et-EE', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        // Function to open article in modal
+        async function openArticle(slug) {
+            try {
+                const response = await fetch(`./articles/${slug}.md`);
+                if (!response.ok) throw new Error('Artiklit ei leitud');
+                
+                const markdownContent = await response.text();
+                const article = articles.find(a => a.slug === slug);
+                
+                showArticleModal(article, markdownContent);
+            } catch (error) {
+                console.error('Viga artikli laadimisel:', error);
+                alert('Viga artikli laadimisel. Palun proovige hiljem uuesti.');
+            }
+        }
+
+        // Function to show article modal
+        function showArticleModal(article, markdownContent) {
+            // Create modal if it doesn't exist
+            let modal = document.getElementById('articleModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'articleModal';
+                modal.className = 'article-modal';
+                document.body.appendChild(modal);
+            }
+
+            // Convert markdown to HTML (simple conversion)
+            const htmlContent = markdownToHtml(markdownContent);
+
+            modal.innerHTML = `
+                <div class="article-modal-content">
+                    <div class="article-modal-header">
+                        <h1 class="article-modal-title">${article.title}</h1>
+                        <button class="article-modal-close" onclick="closeArticleModal()">&times;</button>
+                    </div>
+                    <div class="article-modal-body">
+                        <div class="article-modal-meta">
+                            <span class="article-category">${article.category}</span>
+                            <span class="article-date">${formatDate(article.date)}</span>
+                        </div>
+                        <div class="article-modal-text">
+                            ${htmlContent}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeArticleModal();
+                }
+            });
+        }
+
+        // Function to close article modal
+        function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Simple markdown to HTML converter
+        function markdownToHtml(markdown) {
+            return markdown
+                // Headers
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                // Bold
+                .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+                // Italic
+                .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                // Links
+                .replace(/\[([^\]]*)\]\(([^\)]*)\)/gim, '<a href="$2" target="_blank">$1</a>')
+                // Line breaks
+                .replace(/\n\n/gim, '</p><p>')
+                // Wrap in paragraphs
+                .replace(/^(.*)$/gim, '<p>$1</p>')
+                // Lists (simple)
+                .replace(/^- (.*$)/gim, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>');
+        }
+
+        // Load more articles
+        document.getElementById('loadMoreArticles').addEventListener('click', function(e) {
+            e.preventDefault();
+            displayArticles();
+        });
+
         // Email obfuscation - protect from bots
         function initEmail() {
             const user = 'info';
@@ -912,8 +1394,11 @@
             }
         }
 
-        // Initialize email when page loads
-        document.addEventListener('DOMContentLoaded', initEmail);
+        // Initialize email and articles when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initEmail();
+            loadArticles();
+        });
 
         // Page navigation
         function showPrivacyPolicy() {
