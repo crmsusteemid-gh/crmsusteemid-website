@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "ai-revolutsioon-2025",
+    "title": "AI revolutsioon 2025: kuidas tehisintellekt muudab ärimaailma",
+    "excerpt": "Vaatame, millised on 2025. aasta olulisimad AI trendid ja kuidas ettevõtted saavad neid oma kasuks rakendada.",
+    "category": "AI Trendid",
+    "date": "2025-09-05",
+    "image": null,
+    "icon": "🤖",
+    "author": "CRM Systems meeskond"
+  },
+  {
+    "slug": "crm-integratsioon-ai-ga",
+    "title": "CRM integratsiooni juhend AI lahendustega",
+    "excerpt": "Praktilised sammud, kuidas integreerida olemasolev CRM süsteem tehisintellekti lahendustega.",
+    "category": "CRM & AI",
+    "date": "2025-09-06",
+    "image": null,
+    "icon": "🔗",
+    "author": "CRM Systems meeskond"
+  },
+  {
+    "slug": "klienditeenindus-ai-abil",
+    "title": "Kuidas AI parandab klienditeeninduse kvaliteeti",
+    "excerpt": "Chatbotid, automaatne vastamine ja personaliseeritud soovitused - AI võimalused klienditeeninduses.",
+    "category": "Klienditeenindus",
+    "date": "2025-09-06",
+    "image": null,
+    "icon": "💬",
+    "author": "CRM Systems meeskond"
+  }
+]
